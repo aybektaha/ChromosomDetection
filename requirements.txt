@@ -1,0 +1,8 @@
+flask==3.0.0
+flask-cors==4.0.0
+opencv-python==4.6.0.66
+numpy==1.23.5
+openslide-python==1.2.0
+torch==2.0.0
+torchvision==0.15.1
+pandas==2.0.1
