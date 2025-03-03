@@ -1,0 +1,17 @@
+from python:3.10.15
+
+workdir app/
+
+RUN apt-get update && apt-get install -y python3-pip libgl1 openslide-tools
+
+copy requirements.txt .
+
+run pip install -r requirements.txt
+
+copy app.py .
+copy utils.py .
+copy templates/ templates/
+run mkdir model_checkpoints
+copy model_checkpoints/mobilenetv2_best.pth model_checkpoints/mobilenetv2_best.pth
+
+cmd [ "python3", "app.py"]
